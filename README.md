@@ -54,6 +54,7 @@ Here are the main API endpoints:
 ### Tests
 
 1. Unit tests:
+
 Unit tests validate isolated functionalities of the API.
 
 To run the unit tests:
@@ -62,6 +63,7 @@ To run the unit tests:
 ```
 
 2. Integration tests:
+
 Integration tests check that different parts of the system work together correctly.
 
 To run the integration tests:
@@ -70,6 +72,7 @@ To run the integration tests:
 ```
 
 3. Performance tests:
+
 Performance tests are done using Locust to simulate users sending requests to the API.
 
 Start Locust in another terminal:
@@ -80,6 +83,7 @@ Start Locust in another terminal:
 - Set the number of users to simulate and the spawn rate, then start the performance tests.
 
 4. Security tests:
+
 Security tests analyze the code to detect potential vulnerabilities.
 
 To run security tests with Bandit:
@@ -88,13 +92,15 @@ To run security tests with Bandit:
 ```
 
 5. Compatibility tests:
-he application is automatically tested on multiple Python versions and operating systems via GitHub Actions to ensure compatibility.
+
+The application is automatically tested on multiple Python versions and operating systems via GitHub Actions to ensure compatibility.
 
 - Tested environments:
     - Python versions: 3.9, 3.10
     - Operating systems: Ubuntu, Windows, macOS
 
 6. BDD (Behavior-Driven Development):
+
 BDD tests are written with Behave to validate API behaviors via Gherkin scenarios.
 
 To run the BDD tests:
