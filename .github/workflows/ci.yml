@@ -32,6 +32,10 @@ jobs:
         pip install -r requirements.txt
         pip install pytest-cov bandit behave
 
+    - name: Start Flask app
+      run: |
+        nohup python app.py &
+
     - name: Run tests with coverage
       run: |
         pytest --cov=app tests/
