@@ -1,13 +1,13 @@
 # QA Python Project
 
 ## Description
-Ce projet est une API Flask qui implémente un système CRUD pour gérer des utilisateurs. Il inclut des tests unitaires, d'intégration, de performance, ainsi que des tests de sécurité. Le projet utilise une pipeline CI pour automatiser les tests et les analyses de sécurité.
+This project is a Flask API that implements a CRUD system to manage users. It includes unit tests, integration tests, performance tests, security tests, Compatibility tests and BDD tests. The project uses a CI pipeline to automate the tests and security analysis.
 
 ---
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 - Python 3.x
 - Flask
 - pytest
@@ -16,98 +16,98 @@ Ce projet est une API Flask qui implémente un système CRUD pour gérer des uti
 
 ### Étapes d'installation
 
-1. Clonez ce dépôt :
+1. Clone this repository: :
 ```bash
-    git clone https://github.com/ton-utilisateur/QA_Python_Project.git
+    git clone https://github.com/amine-el-amrani/QA_Python_Project.git
     cd QA_Python_Project
 ```
 
-2. Créez un environnement virtuel et activez-le :
+2. Create a virtual environment and activate it:
 ```bash
     python3 -m venv venv
-    source venv/bin/activate  # Pour Linux/Mac
-    .\venv\Scripts\activate 
+    source venv/bin/activate  # For Linux/Mac
+    .\venv\Scripts\activate   # For Windows
 ```
 
-3. Installez les dépendances :
+3. Install dependencies:
 ```bash
     pip install -r requirements.txt
 ```
 
-4. Démarrez l'application Flask :
+4. Start the Flask application:
 ```bash
     python app.py
 ```
 
-## Utilisation
+## Usage
 
-### Endpoints API
+### API Endpoints
 
-Voici les principaux endpoints de l'API :
+Here are the main API endpoints:
 
-- GET /users : Récupère la liste de tous les utilisateurs.
-- GET /users/<id> : Récupère un utilisateur spécifique par son ID.
-- POST /users : Crée un nouvel utilisateur (données en JSON).
-- PUT /users/<id> : Met à jour un utilisateur spécifique.
-- DELETE /users/<id> : Supprime un utilisateur spécifique.
+- GET /users: Retrieves the list of all users.
+- GET /users/<id>: Retrieves a specific user by ID.
+- POST /users: Creates a new user (data in JSON).
+- PUT /users/<id>: Updates a specific user.
+- DELETE /users/<id>: Deletes a specific user.
 
 ### Tests
 
-1. Tests unitaires
-Les tests unitaires valident les fonctionnalités isolées de l'API.
+1. Unit tests 
+Unit tests validate isolated functionalities of the API.
 
-Pour exécuter les tests unitaires :
+To run the unit tests:
 ```bash
     pytest tests/unit
 ```
 
-2. Tests d'intégration
-Les tests d'intégration vérifient que les différentes parties du système fonctionnent ensemble correctement.
+2. Integration tests
+Integration tests check that different parts of the system work together correctly.
 
-Pour exécuter les tests d'intégration :
+To run the integration tests:
 ```bash
     pytest tests/integration
 ```
 
-3. Tests de performance
-Les tests de performance sont réalisés avec Locust pour simuler des utilisateurs envoyant des requêtes à l'API.
+3. Performance tests
+Performance tests are done using Locust to simulate users sending requests to the API.
 
-- Démarrez Locust dans un autre terminal :
+Start Locust in another terminal:
 ```bash
     locust -f locustfile.py --host=http://127.0.0.1:5000
 ```
-- Accédez à l'interface Locust dans votre navigateur : http://localhost:8089
-- Configurez le nombre d'utilisateurs à simuler et le taux d'apparition, puis lancez les tests de performance.
+- Access the Locust interface in your browser: http://localhost:8089
+- Set the number of users to simulate and the spawn rate, then start the performance tests.
 
-4. Tests de sécurité
-Les tests de sécurité analysent le code pour détecter des vulnérabilités potentielles.
+4. Security tests
+Security tests analyze the code to detect potential vulnerabilities.
 
-Pour exécuter les tests de sécurité avec Bandit :
+To run security tests with Bandit:
 ```bash
     bandit -r app.py
 ```
 
-5. Tests de compatibilité
-L'application est testée automatiquement sur plusieurs versions de Python et systèmes d'exploitation via GitHub Actions pour garantir la compatibilité.
+5. Compatibility tests
+he application is automatically tested on multiple Python versions and operating systems via GitHub Actions to ensure compatibility.
 
-- Environnements testés :
-    - Versions de Python : 3.9, 3.10
-    - Systèmes d'exploitation : Ubuntu, Windows, macOS
+- Tested environments:
+    - Python versions: 3.9, 3.10
+    - Operating systems: Ubuntu, Windows, macOS
 
 6. BDD (Behavior-Driven Development)
-Les tests BDD sont écrits avec Behave pour valider les comportements de l'API via des scénarios Gherkin.
+BDD tests are written with Behave to validate API behaviors via Gherkin scenarios.
 
-Pour exécuter les tests BDD :
+To run the BDD tests:
 ```bash
     behave
 ```
 
-## Intégration continue (CI)
-L'intégration continue utilise GitHub Actions. À chaque commit ou pull request, les tests sont exécutés sur plusieurs versions de Python (3.9, 3.10) et systèmes d'exploitation (Ubuntu, Windows, macOS).
+## Continuous Integration (CI)
+The project uses GitHub Actions for continuous integration. On every commit or pull request, tests are run on multiple Python versions (3.9, 3.10) and operating systems (Ubuntu, Windows, macOS).
 
-Étapes CI :
-- Installation des dépendances
-- Démarrage du serveur Flask
-- Exécution des tests unitaires, d'intégration, et BDD
-- Analyse de la couverture du code
-- Analyse de sécurité avec Bandit
+CI Steps:
+- Install dependencies
+- Start the Flask server
+- Run unit, integration, and BDD tests
+- Run code coverage analysis
+- Run security analysis with Bandit
