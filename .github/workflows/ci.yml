@@ -1,4 +1,4 @@
-name: Python application test
+name: Python application test and security
 
 on:
   push:
@@ -25,8 +25,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest-cov
+        pip install pytest-cov bandit
 
     - name: Run tests with coverage
       run: |
         pytest --cov=app tests/
+
+    - name: Run Bandit security scan
+      run: |
+        bandit -r app.py
