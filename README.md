@@ -94,11 +94,20 @@ L'application est testée automatiquement sur plusieurs versions de Python et sy
     - Versions de Python : 3.9, 3.10
     - Systèmes d'exploitation : Ubuntu, Windows, macOS
 
+6. BDD (Behavior-Driven Development)
+Les tests BDD sont écrits avec Behave pour valider les comportements de l'API via des scénarios Gherkin.
+
+Pour exécuter les tests BDD :
+```bash
+    behave
+```
+
 ## Intégration continue (CI)
 L'intégration continue utilise GitHub Actions. À chaque commit ou pull request, les tests sont exécutés sur plusieurs versions de Python (3.9, 3.10) et systèmes d'exploitation (Ubuntu, Windows, macOS).
 
 Étapes CI :
 - Installation des dépendances
-- Exécution des tests unitaires et d'intégration
+- Démarrage du serveur Flask
+- Exécution des tests unitaires, d'intégration, et BDD
 - Analyse de la couverture du code
 - Analyse de sécurité avec Bandit
