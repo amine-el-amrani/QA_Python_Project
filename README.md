@@ -87,8 +87,15 @@ Pour exécuter les tests de sécurité avec Bandit :
     bandit -r app.py
 ```
 
+5. Tests de compatibilité
+L'application est testée automatiquement sur plusieurs versions de Python et systèmes d'exploitation via GitHub Actions pour garantir la compatibilité.
+
+- Environnements testés :
+    - Versions de Python : 3.9, 3.10
+    - Systèmes d'exploitation : Ubuntu, Windows, macOS
+
 ## Intégration continue (CI)
-L'intégration continue est configurée avec GitHub Actions. À chaque commit ou pull request, les tests unitaires, d'intégration, de couverture, et les analyses de sécurité sont automatiquement exécutés.
+L'intégration continue utilise GitHub Actions. À chaque commit ou pull request, les tests sont exécutés sur plusieurs versions de Python (3.9, 3.10) et systèmes d'exploitation (Ubuntu, Windows, macOS).
 
 Étapes CI :
 - Installation des dépendances
