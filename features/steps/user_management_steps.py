@@ -7,7 +7,7 @@ def step_impl(context):
 
 @when('I send a POST request to /users with name "{name}"')
 def step_impl(context, name):
-    context.response = requests.post(f'{context.base_url}/users', json={"name": name})
+    context.response = requests.post(f'{context.base_url}/users', json={"name": name}, timeout=60)
 
 @then('I should receive a {status_code} status code')
 def step_impl(context, status_code):
